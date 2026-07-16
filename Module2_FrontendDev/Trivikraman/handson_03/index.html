@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - Dynamic DOM</title>
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <span class="logo-accent">Student</span>Portal
+    </div>
+    
+    <div class="menu-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="portal-title">Welcome to the Student Portal</h1>
+        <p>Your centralized gateway to manage courses, view grades, track academic progress, and stay updated with notifications.</p>
+        <button class="btn-primary">Explore Courses</button>
+      </div>
+    </section>
+
+    <!-- Student Stats Bar -->
+    <section id="stats-bar">
+      <div class="stat-item">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Courses Enrolled</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">3.8</span>
+        <span class="stat-label">Current GPA</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Current Semester</span>
+      </div>
+    </section>
+
+    <!-- Interactive Selection Details (Dynamic panel) -->
+    <section id="selection-details">
+      <div id="selected-course" class="info-card hidden">
+        <h4 class="info-title">Selected Course Details</h4>
+        <div id="selected-course-content"></div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+      <div class="courses-header">
+        <h2>Available Courses</h2>
+        
+        <!-- Controls for Search & Sort -->
+        <div class="courses-controls">
+          <input type="text" id="search-courses" placeholder="Search courses by name...">
+          <button id="sort-courses" class="btn-secondary">Sort by Credits &darr;</button>
+        </div>
+      </div>
+      
+      <!-- JavaScript will dynamically render cards here -->
+      <div class="course-grid"></div>
+
+      <!-- Dynamic Credits Summary -->
+      <div class="credits-summary">
+        <p id="total-credits">Total Credits Enrolled: Loading...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. Designed for Digital Nurture 5.0. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script Module -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

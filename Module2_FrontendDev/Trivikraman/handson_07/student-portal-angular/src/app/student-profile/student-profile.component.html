@@ -1,0 +1,66 @@
+<section class="profile-section">
+  <h2>Student Profile</h2>
+  
+  <div class="profile-card">
+    <!-- Bind Form Group (Step 104) -->
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Name field -->
+      <div class="form-group">
+        <label htmlFor="name-input">Full Name</label>
+        <input 
+          type="text" 
+          id="name-input" 
+          formControlName="name" 
+          placeholder="Enter name..."
+        />
+        <!-- Validation feedback (Step 105) -->
+        <div *ngIf="nameControl?.invalid && (nameControl?.dirty || nameControl?.touched)" class="error-feedback">
+          <span *ngIf="nameControl?.errors?.['required']">Name is required.</span>
+        </div>
+      </div>
+
+      <!-- Email field -->
+      <div class="form-group">
+        <label htmlFor="email-input">Email Address</label>
+        <input 
+          type="email" 
+          id="email-input" 
+          formControlName="email" 
+          placeholder="Enter email..."
+        />
+        <!-- Validation feedback (Step 105) -->
+        <div *ngIf="emailControl?.invalid && (emailControl?.dirty || emailControl?.touched)" class="error-feedback">
+          <span *ngIf="emailControl?.errors?.['required']">Email is required.</span>
+          <span *ngIf="emailControl?.errors?.['email']">Enter a valid email address.</span>
+        </div>
+      </div>
+
+      <!-- Semester field -->
+      <div class="form-group">
+        <label htmlFor="semester-input">Current Semester</label>
+        <select id="semester-input" formControlName="semester">
+          <option [value]="1">Semester 1</option>
+          <option [value]="2">Semester 2</option>
+          <option [value]="3">Semester 3</option>
+          <option [value]="4">Semester 4</option>
+          <option [value]="5">Semester 5</option>
+          <option [value]="6">Semester 6</option>
+          <option [value]="7">Semester 7</option>
+          <option [value]="8">Semester 8</option>
+        </select>
+        <!-- Validation feedback (Step 105) -->
+        <div *ngIf="semesterControl?.invalid && (semesterControl?.dirty || semesterControl?.touched)" class="error-feedback">
+          <span *ngIf="semesterControl?.errors?.['required']">Semester is required.</span>
+          <span *ngIf="semesterControl?.errors?.['min'] || semesterControl?.errors?.['max']">Semester must be between 1 and 8.</span>
+        </div>
+      </div>
+
+      <!-- Submit button, disabled if form is invalid (Step 106) -->
+      <button type="submit" class="btn-submit" [disabled]="profileForm.invalid">
+        Save Profile
+      </button>
+
+    </form>
+  </div>
+</section>

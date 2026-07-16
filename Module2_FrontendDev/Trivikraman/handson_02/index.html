@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - Responsive Layout</title>
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <span class="logo-accent">Student</span>Portal
+    </div>
+    
+    <!-- Mobile Hamburger Toggle / Placeholder -->
+    <div class="menu-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="portal-title">Welcome to the Student Portal</h1>
+        <p>Your centralized gateway to manage courses, view grades, track academic progress, and stay updated with notifications.</p>
+        <button class="btn-primary">Explore Courses</button>
+      </div>
+    </section>
+
+    <!-- Student Stats Bar (Flexbox layout) -->
+    <section id="stats-bar">
+      <div class="stat-item">
+        <span class="stat-value">3</span>
+        <span class="stat-label">Courses Enrolled</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">3.8</span>
+        <span class="stat-label">Current GPA</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Current Semester</span>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+      <h2>Available Courses</h2>
+      
+      <!-- CSS Grid Layout -->
+      <div class="course-grid">
+        
+        <article class="course-card">
+          <div class="card-tag">Core</div>
+          <h3>Introduction to Computer Science</h3>
+          <p class="course-desc">Learn the fundamentals of programming, algorithms, and computational thinking using Python.</p>
+          <div class="card-footer">
+            <span class="course-code">CS101</span>
+            <span class="course-credits">4 Credits</span>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="card-tag">Advanced</div>
+          <h3>Web Application Development</h3>
+          <p class="course-desc">Master modern frontend and backend technologies including HTML5, CSS3, ES6+, and frameworks.</p>
+          <div class="card-footer">
+            <span class="course-code">CS202</span>
+            <span class="course-credits">4 Credits</span>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="card-tag">Elective</div>
+          <h3>Database Systems</h3>
+          <p class="course-desc">Understand relational databases, schema design, SQL, and query optimization techniques.</p>
+          <div class="card-footer">
+            <span class="course-code">CS303</span>
+            <span class="course-credits">3 Credits</span>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="card-tag">Core</div>
+          <h3>Data Structures & Algorithms</h3>
+          <p class="course-desc">Dive deep into stacks, queues, trees, graphs, sorting, and algorithmic complexity analysis.</p>
+          <div class="card-footer">
+            <span class="course-code">CS204</span>
+            <span class="course-credits">4 Credits</span>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="card-tag">Elective</div>
+          <h3>User Interface Design</h3>
+          <p class="course-desc">Explore typography, visual hierarchies, color theory, wireframing, and interactive prototyping.</p>
+          <div class="card-footer">
+            <span class="course-code">CS105</span>
+            <span class="course-credits">3 Credits</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. Designed for Digital Nurture 5.0. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

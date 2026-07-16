@@ -1,0 +1,44 @@
+<!-- Hero Banner -->
+<section id="hero">
+  <div class="hero-content">
+    <h1>Welcome to the Student Portal</h1>
+    <p>Your centralized gateway to manage courses, view grades, track academic progress, and stay updated with notifications.</p>
+    <button class="btn-primary">Explore Courses</button>
+  </div>
+</section>
+
+<!-- Courses catalog segment -->
+<div class="courses-header">
+  <h2>Available Courses</h2>
+  
+  <!-- Search input with two-way data binding (Step 94) -->
+  <div class="courses-controls">
+    <input 
+      type="text" 
+      class="search-input" 
+      placeholder="Search courses by name..." 
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+</div>
+
+<!-- Loading spinner (Step 100) -->
+<div *ngIf="loading" class="loading-indicator">
+  <p>Loading course catalog... Please wait.</p>
+</div>
+
+<!-- Course Grid displaying card elements (Step 93) -->
+<div *ngIf="!loading" class="course-grid">
+  <app-course-card 
+    *ngFor="let course of getFilteredCourses()" 
+    [name]="course.name" 
+    [code]="course.code" 
+    [credits]="course.credits" 
+    [grade]="course.grade"
+  ></app-course-card>
+
+  <!-- Empty list warning message (Step 95) -->
+  <div *ngIf="getFilteredCourses().length === 0" class="no-courses-msg">
+    <p>No courses found matching the search criteria.</p>
+  </div>
+</div>
